@@ -1,26 +1,39 @@
-import requests
+from algorithms import Graph
+from server_api import is_open_position
 
-server = 'http://52.27.140.147:9099/'
+class Maze(object):
 
-## Tries 100 times to get a maze from the server.
-## Returns maze payload upon first success
-## Return None upon failure
-def getmaze():
-
-    get_maze_addr = server + 'maze'
-    num_tries = 0
-    while (True):
-        
-        r = requests.post(get_maze_addr)
-
-        if (r.status_code == 201):
-            return r.content
-
-        elif (num_tries >= 100):
+    def __init__(self, width, height, maze_id):
+        if (width < 0 or height < 0):
+            print 'Invalid maze dimensions'
             return None
 
-        num_tries += 1
+        self.width = width
+        self.height = height
+        self.id = maze_id
+        self.graph = Graph()
 
-    return None
 
-print getmaze()
+    def explore_maze(self):
+        for y in range(self.height):
+            for x in range(self.width):
+
+                self.graph.add_node((x,y))
+
+                if (is_open_position(x, y, self.id)):
+                    self.graph.mark_free((x,y))
+
+
+    def print_maze(self):
+        print self.graph.free
+
+        for y in range(self.height):
+            for x in range(self.width):
+
+                y_print = self.height - y - 1
+                if ((x,y_print) in self.graph.free):
+                    print ' ',
+                else:
+                    print 'X',
+
+            print ''
