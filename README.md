@@ -19,7 +19,7 @@ python run_maze.py
 ## Labels
 
 - '?' characters represent unexplored locations of the maze
-- ' ' characters (blank) represent explored locations of the maze that are free of obstacles
+- ' ' characters (blank spaces) represent explored locations of the maze that are free
 - 'X' characters represent explored locations of the maze that are blocked by an obstacle
 
 ## The Implementations
@@ -40,6 +40,6 @@ The OPTIMAL maze implementation performs considerably better on average. The dif
 
 ## Author
 
-Henrique Vaz
-hvaz@college.harvard.edu
-henriquevgvaz@gmail.com
+- Henrique Vaz
+- hvaz@college.harvard.edu
+- henriquevgvaz@gmail.com
