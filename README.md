@@ -21,6 +21,7 @@ python run_maze.py
 - '?' characters represent unexplored locations of the maze
 - ' ' characters (blank spaces) represent explored locations of the maze that are free
 - 'X' characters represent explored locations of the maze that are blocked by an obstacle
+- '.' characters represent locations the are part of the exit path
 
 ## The Implementations
 
@@ -28,7 +29,7 @@ Both implementations rely on a Breadth First Search for finding a path between t
 
 ### The OPTIMAL Maze
 
-Under this context, we request maze information only as we need it. If our algorithms does not explore a certain set of nodes, there is no need in asking the server to tell us what is there at these places. You can visually observe this after the solution is printed to the screen: many locations will have the '?' character representing an unexplored location.
+Under this context, we request maze information only as we need it. If our algorithm does not explore a certain set of nodes, there is no need in asking the server to tell us what is there at these places. You can visually observe this after the solution is printed to the screen: many locations will have the '?' character representing an unexplored location.
 
 ### The REGULAR Maze
 
