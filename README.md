@@ -1,6 +1,6 @@
 # maze-challenge
 
-## Funcionality
+## Functionality
 
 This repository contains the solution for the Code Maze challenge which can be found [here](http://52.27.140.147:9099/).
 
