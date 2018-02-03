@@ -1,51 +1,116 @@
-## This implementation was copied from
-## https://gist.github.com/econchick/4666413
 from collections import defaultdict
+from server_api import is_open_position
 
 class Graph:
 
-    def __init__(self):
-        self.nodes = set()
-        self.edges = defaultdict(list)
-        self.free= set()
+    def __init__(self, maze):
 
-    def add_node(self, node):
-        self.nodes.add(node)
+        ## explored is the set of nodes in the graph for which we checked
+        ## all possible edges that can contain that node
+        self.explored = set()
+        self.nodes = {}
+        self.edges = defaultdict(set)
+        self.maze = maze
 
-    def add_edge(self, from_node, to_node, distance):
-        self.edges[from_node].append(to_node)
-        self.edges[to_node].append(from_node)
-        self.distances[(from_node, to_node)] = distance
+    
+    def add_edge(self, from_node, to_node):
+        self.edges[from_node].add(to_node)
+        self.edges[to_node].add(from_node)
 
-    def mark_free(self, node):
-        self.free.add(node)
 
-def dijsktra(graph, initial):
-    visited = {initial: 0}
-    path = {}
+    def add_node(self, node, is_free):
+        self.nodes[node] = is_free
 
-    nodes = set(graph.nodes)
 
-    while nodes: 
-        min_node = None
-        for node in nodes:
-            if node in visited:
-                if min_node is None:
-                    min_node = node
-                elif visited[node] < visited[min_node]:
-                    min_node = node
+    def is_free(self, node):
 
-        if min_node is None:
-            break
+        if (node not in self.nodes.keys()):
+            return
 
-        nodes.remove(min_node)
-        current_weight = visited[min_node]
+        return self.nodes[node]
 
-        for edge in graph.edges[min_node]:
-            weight = current_weight + graph.distance[(min_node, edge)]
 
-            if edge not in visited or weight < visited[edge]:
-                visited[edge] = weight
-                path[edge] = min_node
+    def was_explored(self, node):
+        return node in self.explored
 
-    return visited, path    
+
+    def mark_explored(self, node):
+        self.explored.add(node)
+
+
+    def explore_neighborhood(self, node, going_up):
+        
+        if (self.was_explored(node)):
+            return
+
+        if (is_open_position(node, self.maze.id)):
+
+            self.add_node(node, is_free=True)
+            
+            x, y = node[0], node[1]
+            node_right = (x + 1, y)
+            node_left = (x - 1, y)
+            node_up = (x, y + 1)
+            node_down = (x, y - 1)
+
+            if (going_up):
+
+                if (x + 1 < self.maze.width and not self.was_explored(node_right)):
+                    
+                    check_free = is_open_position(node_right, self.maze.id)
+                    self.add_node(node_right, is_free=check_free)
+                    if (self.is_free(node_right)):
+                        self.add_edge(node, node_right)
+
+                if (y + 1 < self.maze.height and not self.was_explored(node_up)):
+                    
+                    check_free = is_open_position(node_up, self.maze.id)
+                    self.add_node(node_up, is_free=check_free)
+                    if (self.is_free(node_up)):
+                        self.add_edge(node, node_up)
+
+                if (x > 0 and not self.was_explored(node_left)):
+                    
+                    check_free = is_open_position(node_left, self.maze.id)
+                    self.add_node(node_left, is_free=check_free)
+                    if (self.is_free(node_left)):
+                        self.add_edge(node, node_left)
+
+                if (y > 0 and not self.was_explored(node_down)):
+
+                    check_free = is_open_position(node_down, self.maze.id)
+                    self.add_node(node_down, is_free=check_free)
+                    if (self.is_free(node_down)):
+                        self.add_edge(node, node_down)
+
+            else:
+
+                if (x > 0 and self.is_free(node_left)):
+                    self.add_edge(node, node_left)
+
+                if (y + 1 < self.maze.height and self.is_free(node_up)):
+                    self.add_edge(node, node_up)
+
+        else:
+            self.add_node(node, is_free=False)
+
+
+        self.mark_explored(node)
+
+    
+    ## BFS implementation from
+    ## http://eddmann.com/posts/depth-first-search-and-breadth-first-search-in-python/
+    def get_path(self, start, goal, maze_was_explored):
+
+        queue = [(start, [start])]
+        while queue:
+            (node, path) = queue.pop(0)
+
+            if (not maze_was_explored):
+                self.explore_neighborhood(node, going_up=True)
+
+            for next_node in set(self.edges[node]) - set(path):
+                if (next_node == goal):
+                    return path + [next_node]
+                else:
+                    queue.append((next_node, path + [next_node]))
