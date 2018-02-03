@@ -21,7 +21,7 @@ python run_maze.py
 - '?' characters represent unexplored locations of the maze
 - ' ' characters (blank spaces) represent explored locations of the maze that are free
 - 'X' characters represent explored locations of the maze that are blocked by an obstacle
-- '.' characters represent locations the are part of the exit path
+- '.' characters represent locations that are part of the exit path
 
 ## The Implementations
 
@@ -38,6 +38,11 @@ Under this context, first we request information about the whole maze, and then 
 ## Performance Comparison
 
 The OPTIMAL maze implementation performs considerably better on average. The difference in performance increases as the maze dimensions increase, which is expected.
+
+## Further Work
+
+In order to make this implementation more "professional", one could write a small bash script that define important environment variables, such as the server address, which as of now is hard coded. 
+One could also make small changes in the code to allow the user to run only one of the two implementations, or both.
 
 ## Author
 
