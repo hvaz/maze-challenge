@@ -18,9 +18,9 @@ python run_maze.py
 
 ## Labels
 
-'?' characters represent unexplored locations of the maze
-' ' characters (blank) represent explored locations of the maze that are free of obstacles
-'X' characters represent explored locations of the maze that are blocked by an obstacle
+- '?' characters represent unexplored locations of the maze
+- ' ' characters (blank) represent explored locations of the maze that are free of obstacles
+- 'X' characters represent explored locations of the maze that are blocked by an obstacle
 
 ## The Implementations
 
@@ -37,3 +37,9 @@ Under this context, first we request information about the whole maze, and then 
 ## Performance Comparison
 
 The OPTIMAL maze implementation performs considerably better on average. The difference in performance increases as the maze dimensions increase, which is expected.
+
+## Author
+
+Henrique Vaz
+hvaz@college.harvard.edu
+henriquevgvaz@gmail.com
