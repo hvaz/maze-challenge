@@ -46,26 +46,26 @@ The OPTIMAL maze implementation performs considerably better on average. The dif
 Maze Optimized..
 
 Maze Solution:
-* * * * * * * * * * * * * * * * * *   *
-* ? ? ? ? ? ? ?     ?   ? . . . . . . *
-* ? ? ? ? ? ? ? ?         . ?   ?   ? *
-* ? ? ? ? ? ? ?     ?   ? .   ? ? ? ? *
-* ? ? ? ? ? ? ? ?   ? ?   . ? ? ? ? ? *
-* ? ? ? ? ? ? ? ? ? ? ? ? . ? ? ? ? ? *
-* ? ? ? ? ? ? ?     ?   . . ? ? ? ? ? *
-* ? ? ? ? ? ?     ?   ? . ? ? ? ? ? ? *
-* ? ? ?   ?   ? . . . . . ? ? ? ? ? ? *
-*   ?   . . . . . ? ?   ? ? ? ? ? ? ? *
-*     ? . ?   ?     ?   ? ? ? ? ? ? ? *
-* ?     . ?     ?   ? ? ? ? ? ? ? ? ? *
-*     ? . ? ?   ? ? ? ? ? ? ? ? ? ? ? *
-* ? ?   . .   ? ? ? ? ? ? ? ? ? ? ? ? *
-*     ? ? . ? ? ? ? ? ? ? ? ? ? ? ? ? *
-* ?       .   ? ? ? ? ? ? ? ? ? ? ? ? *
-*   ?   ? . ? ? ? ? ? ? ? ? ? ? ? ? ? *
-*   ? ? . . ? ? ? ? ? ? ? ? ? ? ? ? ? *
-* . . . . ? ? ? ? ? ? ? ? ? ? ? ? ? ? *
-*   * * * * * * * * * * * * * * * * * *
+\ * * * * * * * * * * * * * * * * * *   *
+\ * ? ? ? ? ? ? ?     ?   ? . . . . . . *
+\ * ? ? ? ? ? ? ? ?         . ?   ?   ? *
+\ * ? ? ? ? ? ? ?     ?   ? .   ? ? ? ? *
+\ * ? ? ? ? ? ? ? ?   ? ?   . ? ? ? ? ? *
+\ * ? ? ? ? ? ? ? ? ? ? ? ? . ? ? ? ? ? *
+\ * ? ? ? ? ? ? ?     ?   . . ? ? ? ? ? *
+\ * ? ? ? ? ? ?     ?   ? . ? ? ? ? ? ? *
+\ * ? ? ?   ?   ? . . . . . ? ? ? ? ? ? *
+\ *   ?   . . . . . ? ?   ? ? ? ? ? ? ? *
+\ *     ? . ?   ?     ?   ? ? ? ? ? ? ? *
+\ * ?     . ?     ?   ? ? ? ? ? ? ? ? ? *
+\ *     ? . ? ?   ? ? ? ? ? ? ? ? ? ? ? *
+\ * ? ?   . .   ? ? ? ? ? ? ? ? ? ? ? ? *
+\ *     ? ? . ? ? ? ? ? ? ? ? ? ? ? ? ? *
+\ * ?       .   ? ? ? ? ? ? ? ? ? ? ? ? *
+\ *   ?   ? . ? ? ? ? ? ? ? ? ? ? ? ? ? *
+\ *   ? ? . . ? ? ? ? ? ? ? ? ? ? ? ? ? *
+\ * . . . . ? ? ? ? ? ? ? ? ? ? ? ? ? ? *
+\ *   * * * * * * * * * * * * * * * * * *
 Solution for maze is correct!
 Correct solution!
 
@@ -73,48 +73,48 @@ Time taken for OPTIMAL: 63.9566619396
 Regular Maze..
 
 Maze:
-* * * * * * * * * * * * * * * * * *   *
-*         X   X     X   X             *
-* X X X       X X           X   X   X *
-*         X         X   X     X     X *
-* X   X     X   X     X     X   X     *
-* X   X   X     X X   X X   X       X *
-*   X       X X     X       X   X     *
-*       X   X     X   X   X       X   *
-* X   X   X   X           X X   X X   *
-*   X             X X   X       X     *
-*     X   X   X     X   X   X     X   *
-* X       X     X   X X       X   X   *
-*     X   X X   X X       X     X     *
-* X X         X   X X X X   X X   X   *
-*     X X   X                         *
-* X           X X   X X   X   X   X   *
-*   X   X   X           X     X X     *
-*   X X     X   X   X     X       X   *
-*         X X X       X     X   X     *
-*   * * * * * * * * * * * * * * * * * *
+\ * * * * * * * * * * * * * * * * * *   *
+\ *         X   X     X   X             *
+\ * X X X       X X           X   X   X *
+\ *         X         X   X     X     X *
+\ * X   X     X   X     X     X   X     *
+\ * X   X   X     X X   X X   X       X *
+\ *   X       X X     X       X   X     *
+\ *       X   X     X   X   X       X   *
+\ * X   X   X   X           X X   X X   *
+\ *   X             X X   X       X     *
+\ *     X   X   X     X   X   X     X   *
+\ * X       X     X   X X       X   X   *
+\ *     X   X X   X X       X     X     *
+\ * X X         X   X X X X   X X   X   *
+\ *     X X   X                         *
+\ * X           X X   X X   X   X   X   *
+\ *   X   X   X           X     X X     *
+\ *   X X     X   X   X     X       X   *
+\ *         X X X       X     X   X     *
+\ *   * * * * * * * * * * * * * * * * * *
 
 Maze Solution:
-* * * * * * * * * * * * * * * * * *   *
-*         X   X     X   X . . . . . . *
-* X X X       X X         . X   X   X *
-*         X         X   X .   X     X *
-* X   X     X   X     X   . X   X     *
-* X   X   X     X X   X X . X       X *
-*   X       X X     X   . . X   X     *
-*       X   X     X   X . X       X   *
-* X   X   X   X . . . . . X X   X X   *
-*   X   . . . . . X X   X       X     *
-*     X . X   X     X   X   X     X   *
-* X     . X     X   X X       X   X   *
-*     X . X X   X X       X     X     *
-* X X   . .   X   X X X X   X X   X   *
-*     X X . X                         *
-* X       .   X X   X X   X   X   X   *
-*   X   X . X           X     X X     *
-*   X X . . X   X   X     X       X   *
-* . . . . X X X       X     X   X     *
-*   * * * * * * * * * * * * * * * * * *
+\ * * * * * * * * * * * * * * * * * *   *
+\ *         X   X     X   X . . . . . . *
+\ * X X X       X X         . X   X   X *
+\ *         X         X   X .   X     X *
+\ * X   X     X   X     X   . X   X     *
+\ * X   X   X     X X   X X . X       X *
+\ *   X       X X     X   . . X   X     *
+\ *       X   X     X   X . X       X   *
+\ * X   X   X   X . . . . . X X   X X   *
+\ *   X   . . . . . X X   X       X     *
+\ *     X . X   X     X   X   X     X   *
+\ * X     . X     X   X X       X   X   *
+\ *     X . X X   X X       X     X     *
+\ * X X   . .   X   X X X X   X X   X   *
+\ *     X X . X                         *
+\ * X       .   X X   X X   X   X   X   *
+\ *   X   X . X           X     X X     *
+\ *   X X . . X   X   X     X       X   *
+\ * . . . . X X X       X     X   X     *
+\ *   * * * * * * * * * * * * * * * * * *
 Solution for maze is correct!
 Correct solution!
 
