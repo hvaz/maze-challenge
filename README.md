@@ -39,6 +39,87 @@ Under this context, first we request information about the whole maze, and then 
 
 The OPTIMAL maze implementation performs considerably better on average. The difference in performance increases as the maze dimensions increase, which is expected.
 
+## Example Output
+
+➜  maze-challenge git:(master) ✗ python run_maze.py
+{"height":18,"id":"f1dae6addabecdf255cbffcf425d276dda75d5ab6fcbb55f27ad5db9bad592e5adafdeb61cfabd6bf","width":18}
+Maze Optimized..
+
+Maze Solution:
+* * * * * * * * * * * * * * * * * *   *
+* ? ? ? ? ? ? ?     ?   ? . . . . . . *
+* ? ? ? ? ? ? ? ?         . ?   ?   ? *
+* ? ? ? ? ? ? ?     ?   ? .   ? ? ? ? *
+* ? ? ? ? ? ? ? ?   ? ?   . ? ? ? ? ? *
+* ? ? ? ? ? ? ? ? ? ? ? ? . ? ? ? ? ? *
+* ? ? ? ? ? ? ?     ?   . . ? ? ? ? ? *
+* ? ? ? ? ? ?     ?   ? . ? ? ? ? ? ? *
+* ? ? ?   ?   ? . . . . . ? ? ? ? ? ? *
+*   ?   . . . . . ? ?   ? ? ? ? ? ? ? *
+*     ? . ?   ?     ?   ? ? ? ? ? ? ? *
+* ?     . ?     ?   ? ? ? ? ? ? ? ? ? *
+*     ? . ? ?   ? ? ? ? ? ? ? ? ? ? ? *
+* ? ?   . .   ? ? ? ? ? ? ? ? ? ? ? ? *
+*     ? ? . ? ? ? ? ? ? ? ? ? ? ? ? ? *
+* ?       .   ? ? ? ? ? ? ? ? ? ? ? ? *
+*   ?   ? . ? ? ? ? ? ? ? ? ? ? ? ? ? *
+*   ? ? . . ? ? ? ? ? ? ? ? ? ? ? ? ? *
+* . . . . ? ? ? ? ? ? ? ? ? ? ? ? ? ? *
+*   * * * * * * * * * * * * * * * * * *
+Solution for maze is correct!
+Correct solution!
+
+Time taken for OPTIMAL: 63.9566619396
+Regular Maze..
+
+Maze:
+* * * * * * * * * * * * * * * * * *   *
+*         X   X     X   X             *
+* X X X       X X           X   X   X *
+*         X         X   X     X     X *
+* X   X     X   X     X     X   X     *
+* X   X   X     X X   X X   X       X *
+*   X       X X     X       X   X     *
+*       X   X     X   X   X       X   *
+* X   X   X   X           X X   X X   *
+*   X             X X   X       X     *
+*     X   X   X     X   X   X     X   *
+* X       X     X   X X       X   X   *
+*     X   X X   X X       X     X     *
+* X X         X   X X X X   X X   X   *
+*     X X   X                         *
+* X           X X   X X   X   X   X   *
+*   X   X   X           X     X X     *
+*   X X     X   X   X     X       X   *
+*         X X X       X     X   X     *
+*   * * * * * * * * * * * * * * * * * *
+
+Maze Solution:
+* * * * * * * * * * * * * * * * * *   *
+*         X   X     X   X . . . . . . *
+* X X X       X X         . X   X   X *
+*         X         X   X .   X     X *
+* X   X     X   X     X   . X   X     *
+* X   X   X     X X   X X . X       X *
+*   X       X X     X   . . X   X     *
+*       X   X     X   X . X       X   *
+* X   X   X   X . . . . . X X   X X   *
+*   X   . . . . . X X   X       X     *
+*     X . X   X     X   X   X     X   *
+* X     . X     X   X X       X   X   *
+*     X . X X   X X       X     X     *
+* X X   . .   X   X X X X   X X   X   *
+*     X X . X                         *
+* X       .   X X   X X   X   X   X   *
+*   X   X . X           X     X X     *
+*   X X . . X   X   X     X       X   *
+* . . . . X X X       X     X   X     *
+*   * * * * * * * * * * * * * * * * * *
+Solution for maze is correct!
+Correct solution!
+
+Time taken for REGULAR: 66.071158886
+
 ## Further Work
 
 In order to make this implementation more "professional", one could write a small bash script that define important environment variables, such as the server address, which as of now is hard coded. 
