@@ -1,5 +1,9 @@
 # maze-challenge
 
+## Funcionality
+
+This repository contains the solution for the Code Maze challenge which can be found [here](http://52.27.140.147:9099/).
+
 ## Dependencies
 
 The only dependency for running the code is the [requests](http://docs.python-requests.org/en/master/) python library. You can install it by running
